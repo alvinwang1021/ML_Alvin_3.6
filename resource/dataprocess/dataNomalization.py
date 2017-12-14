@@ -10,7 +10,7 @@ def normalization(data):
     #print type(x)
     min_max_scaler = preprocessing.MinMaxScaler()
     x_scaled = min_max_scaler.fit_transform(x)
-    print 'Data Normalization Done', '\n'
+    print ('Data Normalization Done', '\n')
     #print type(x_scaled)
     #print x_scaled.shape
     #print x_scaled[:, 0: 5].shape

@@ -17,7 +17,7 @@ def readData(fileName, rows):
     
     selectedData.stay = pd.to_numeric(selectedData.stay, errors='coerce')
     selectedData.freq = pd.to_numeric(selectedData.freq, errors='coerce')
-    print 'Data Reading Done', '\n'
+    print ('Data Reading Done', '\n')
     return selectedData
 
 

@@ -13,7 +13,7 @@ def metricLearning (data):
     
     #get unique row ids
     rowIDLIst = pd.concat([df_label.id1,df_label.id2],axis = 0).unique().tolist()
-    print "rowIDLIst",'\n', rowIDLIst
+    print ("rowIDLIst",'\n', rowIDLIst)
     
     #connectivity graph
     cmatrix = np.zeros([len(rowIDLIst),len(rowIDLIst)])
@@ -25,7 +25,7 @@ def metricLearning (data):
         cmatrix[rowIDLIst.index(lbl[0])][rowIDLIst.index(lbl[1])] = int(lbl[2])
         cmatrix[rowIDLIst.index(lbl[1])][rowIDLIst.index(lbl[0])] = int(lbl[2])
     
-    print "cmatrix.shape", '\n', cmatrix.shape
+    print ("cmatrix.shape", '\n', cmatrix.shape)
     
     trainedData = []
     
@@ -41,7 +41,7 @@ def metricLearning (data):
     #print "typetrainedData1", '\n', len(trainedData)
     
     trainedData = pd.concat(trainedData,axis = 0).as_matrix()   
-    print "trainedData.shape","\n", trainedData.shape
+    print ("trainedData.shape","\n", trainedData.shape)
     #print "trainedData2", "\n", trainedData
     
     metric = SDML().fit(trainedData, cmatrix)  
