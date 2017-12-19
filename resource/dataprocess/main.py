@@ -19,7 +19,7 @@ from metricLearning import metricLearning
 
 if __name__ == "__main__":
     fileName = '../../demographic+Data+From+mimic.csv'
-    toRows = 20
+    toRows = 100
     
     data = readData(fileName, toRows)
     onehotdata = oneHotData(data)
@@ -30,13 +30,14 @@ if __name__ == "__main__":
     
     df_NewData = metricLearning(df_OriData)
     
-    
+    #print (df_OriData)
     
     OriKmeansresult = kmeans_al(df_OriData)
     NewKmeansresult = kmeans_al(df_NewData)
     #print kmeansresult.labels_
     TwoDOriData = DimReduction(df_OriData)
     TwoDNewData = DimReduction(df_NewData)
+    print (TwoDOriData)
     
     showCluster(TwoDOriData, OriKmeansresult.labels_)  
     showCluster(TwoDNewData, NewKmeansresult.labels_)  
