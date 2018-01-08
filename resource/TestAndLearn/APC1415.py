@@ -96,7 +96,7 @@ def process_file(f):
             #if (not desc.empty):
                 #descs.append(desc.iloc[0])
             
-        #str_diags_desc = '\t'.join(descs)
+        #str_diags_desc = '\t'.join(descs )
         diags_desc.append(str_diags_codes)
         #print vec.shape
         data.append(vec)
